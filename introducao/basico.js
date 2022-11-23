@@ -1,3 +1,3 @@
 "use strict";
-var a = "Teste TS!";
+var a = 'Teste TS!';
 console.log(a);
