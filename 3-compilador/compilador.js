@@ -1,4 +1,7 @@
 "use strict";
+// Links Úteis
+// https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+// https://www.typescriptlang.org/docs/handbook/compiler-options.html
 var canal = 'Gaveta';
 var inscritos = 610234;
 // canal = inscritos
@@ -11,13 +14,11 @@ var qualquerCoisa;
 qualquerCoisa = 12;
 qualquerCoisa = 'abc';
 function saudar(isManha) {
-    var saudacao;
+    var saudacao = 'Tenha uma boa vida!';
     if (isManha) {
         saudacao = 'Bom Dia!';
     }
-    else {
-        saudacao = 'Tenha uma boa vida!';
-    }
     return saudacao;
 }
+console.log(saudar(true));
 //# sourceMappingURL=compilador.js.map
