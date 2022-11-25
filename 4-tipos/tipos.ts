@@ -56,12 +56,12 @@ console.log(carro)
 console.log(typeof carro)
 
 // function
-function digaOi (): void {
+function digaOi(): void {
   console.log('Oiiii!')
 }
 digaOi()
 
-function multiplica (numA: number, numB: number): number {
+function multiplica(numA: number, numB: number): number {
   return numA * numB
 }
 console.log(multiplica(7.4, 99))
@@ -92,7 +92,7 @@ interface Funcionario {
 
 const funcionario: Funcionario = {
   supervisores: ['Ana', 'Paulo'],
-  baterPonto (horario: number) {
+  baterPonto(horario: number) {
     if (horario <= 8) {
       return 'Ponto normal'
     }
@@ -119,7 +119,7 @@ if (typeof valor === 'number') {
 }
 
 // never
-function falha (msg: string): never {
+function falha(msg: string): never {
   while (true) {
     throw new Error(msg)
   }
@@ -128,7 +128,7 @@ function falha (msg: string): never {
 const produto = {
   nome: 'Sabão',
   preco: 4,
-  validaProduto () {
+  validaProduto() {
     if (!this.nome || this.nome.trim().length === 0) {
       falha('Precisa ter um nome')
     }
@@ -174,7 +174,7 @@ interface ContaBancaria {
 
 const contaBancaria: ContaBancaria = {
   saldo: 3456,
-  depositar (valor: number) {
+  depositar(valor: number) {
     this.saldo += valor
   }
 }

@@ -11,8 +11,7 @@ var possuiHobbies = true;
 possuiHobbies = false;
 console.log(possuiHobbies);
 // tipos explicitos
-var minhaIdade;
-minhaIdade = 27;
+var minhaIdade = 27;
 console.log(minhaIdade);
 console.log(typeof minhaIdade);
 // array
@@ -29,6 +28,7 @@ console.log(typeof endereco);
 endereco = ['Avenida Dois', 45, 'Bloco A'];
 // enuns
 var Cor;
+// enuns
 (function (Cor) {
     Cor[Cor["Amarelo"] = 0] = "Amarelo";
     Cor[Cor["Azul"] = 1] = "Azul";
@@ -52,6 +52,7 @@ console.log(typeof carro);
 function digaOi() {
     console.log('Oiiii!');
 }
+digaOi();
 function multiplica(numA, numB) {
     return numA * numB;
 }
@@ -63,12 +64,12 @@ console.log(calculo(50, 2.5));
 // objects
 var usuario = {
     nome: 'Sergio',
-    idade: 54,
+    idade: 54
 };
 console.log(usuario);
 usuario = {
     nome: 'Luiz',
-    idade: 54,
+    idade: 54
 };
 console.log(usuario);
 var funcionario = {
@@ -78,7 +79,7 @@ var funcionario = {
             return 'Ponto normal';
         }
         return 'Ponto fora do horário';
-    },
+    }
 };
 console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(8));
@@ -106,24 +107,26 @@ var produto = {
     nome: 'Sabão',
     preco: 4,
     validaProduto: function () {
-        if (!this.nome || this.nome.trim().length == 0) {
+        if (!this.nome || this.nome.trim().length === 0) {
             falha('Precisa ter um nome');
         }
         if (this.preco <= 0) {
             falha('Preço inválido');
         }
-    },
+    }
 };
 produto.validaProduto();
 // null
 var altura = 12;
+console.log(altura);
 // altura = null
 var alturaOpcional = 12;
 alturaOpcional = null;
+console.log(alturaOpcional);
 var contato1 = {
     nome: 'Joao',
     tel1: '999999999',
-    tel2: null,
+    tel2: null
 };
 console.log(contato1.nome);
 console.log(contato1.tel1);
@@ -132,12 +135,13 @@ var contaBancaria = {
     saldo: 3456,
     depositar: function (valor) {
         this.saldo += valor;
-    },
+    }
 };
 var correntista = {
     nome: 'Ana Silva',
     contaBancaria: contaBancaria,
-    contatos: ['34567890', '98765432'],
+    contatos: ['34567890', '98765432']
 };
 correntista.contaBancaria.depositar(3000);
 console.log(correntista);
+//# sourceMappingURL=tipos.js.map
