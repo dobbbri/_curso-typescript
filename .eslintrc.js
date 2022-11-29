@@ -5,23 +5,21 @@ module.exports = {
   },
   // extends: "standard-with-typescript",
   overrides: [],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: "./tsconfig.json",
-    ecmaVersion: "latest",
+    project: './tsconfig.json',
+    ecmaVersion: 'latest',
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  plugins: ['@typescript-eslint'],
   rules: {
-    semi: "off",
-    "@typescript-eslint/semi": "error",
-    "no-extra-semi": "warn",
-    curly: "warn",
-    quotes: ["error", "single", { "allowTemplateLiterals": true }],
-    eqeqeq: "error",
+    semi: ['error', 'never'],
+    '@typescript-eslint/semi': ['error', 'never'],
+    'no-extra-semi': 'warn',
+    curly: 'warn',
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    eqeqeq: 'error',
     // indent: "off",
     // "@typescript-eslint/indent": ["warn", "space", { "SwitchCase": 2 } ],
-    "@typescript-eslint/no-floating-promises": "error"
+    '@typescript-eslint/no-floating-promises': 'error',
   },
 }
