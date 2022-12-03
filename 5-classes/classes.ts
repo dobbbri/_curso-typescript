@@ -156,3 +156,142 @@ console.log(pessoa1.idade)
 
 pessoa1.idade = -3
 console.log(pessoa1.idade)
+
+// Atributos e métodos estáticos
+class Matematica {
+  static PI: number = 3.1416
+
+  static areaCirc(raio: number): number {
+    return Matematica.PI * raio * raio
+  }
+}
+
+// const m1 = new Matematica()
+// m1.PI = 4.2
+// console.log(m1.areaCirc(4))
+
+console.log(Matematica.areaCirc(4))
+
+// Classe abstrata
+abstract class Calculo {
+  protected resultado: number = 0
+
+  abstract executar(...numeros: number[]): void
+
+  getResultado(): number {
+    return this.resultado
+  }
+}
+
+class Soma extends Calculo {
+  executar(...numeros: number[]): void {
+    this.resultado = numeros.reduce((t, a) => t + a)
+  }
+}
+
+class Multiplicacao extends Calculo {
+  executar(...numeros: number[]): void {
+    this.resultado = numeros.reduce((t, a) => t * a)
+  }
+}
+
+let c1: Calculo = new Soma()
+c1.executar(2, 3, 4, 5)
+console.log(c1.getResultado())
+
+c1 = new Multiplicacao()
+c1.executar(2, 3, 4, 5)
+console.log(c1.getResultado())
+
+class Unico {
+  private static instance: Unico = new Unico()
+  private constructor() {}
+
+  static getInstance(): Unico {
+    return Unico.instance
+  }
+
+  agora() {
+    return new Date()
+  }
+}
+
+// const errado = new Unico()
+console.log(Unico.getInstance().agora())
+
+// Somente Leitura
+class Aviao {
+  public readonly modelo: string
+
+  constructor(modelo: string, public readonly prefixo: string) {
+    this.modelo = modelo
+  }
+}
+
+const turboHelice = new Aviao('Tu-114', 'PT-ABC')
+// turoHelice.modelo = 'DC-8'
+// turoHelice.prefixo = PT-DEF'
+console.log(turboHelice)
+
+// Exercício 1 - Classe
+class Moto {
+  public velocidade: number = 0
+
+  constructor(public nome: string) {}
+
+  buzinar() {
+    console.log('Toooooooooot!')
+  }
+
+  acelerar(delta: number) {
+    this.velocidade = this.velocidade + delta
+  }
+}
+
+const moto = new Moto('Ducati')
+moto.buzinar()
+console.log(moto.velocidade)
+moto.acelerar(30)
+console.log(moto.velocidade)
+
+// Exercício 2 - Herança
+abstract class Objeto2D {
+  constructor(public base: number = 0, public altura: number = 0) {}
+
+  abstract area(): number
+}
+
+class Retangulo extends Objeto2D {
+  area(): number {
+    return this.base * this.altura
+  }
+}
+
+const retangulo = new Retangulo(5, 7)
+retangulo.base = 10
+// retangulo.altura = 7
+console.log(retangulo.area())
+
+// Exercício 3 - Getters & Setters
+class Estagiario {
+  private _primeiroNome: string = ''
+
+  get primeiroNome() {
+    return this._primeiroNome
+  }
+
+  set primeiroNome(valor) {
+    if (valor.length >= 3) {
+      this._primeiroNome = valor
+    } else {
+      this._primeiroNome = ''
+    }
+  }
+}
+
+const estagiario = new Estagiario()
+console.log(estagiario.primeiroNome)
+estagiario.primeiroNome = 'Le'
+console.log(estagiario.primeiroNome)
+estagiario.primeiroNome = 'Leonardo'
+console.log(estagiario.primeiroNome)
